@@ -6,10 +6,8 @@ body {
   background-size: cover;
   background-position: center center;
   width: 100%;
-  height: 100vh;
-  text-align: center;
+  height: 150%;
   margin: auto;
-	padding: 0;
 }
 
 .sphere {
