@@ -37,3 +37,7 @@ circle {
   padding: 8px;
   text-align: center;
 }
+
+svg {
+  margin-top: 5em;
+}
