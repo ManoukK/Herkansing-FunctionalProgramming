@@ -1,9 +1,9 @@
 # De collectie in kaart brengen
 
-### De opdracht
+## De opdracht
 De opdracht is om een data visualisatie te maken van de database van het Tropen museum. De data visualisatie is statisch en de database word opgehaald met een query. Zo blijft de visualisatie altijd up to date. Het is ook de bedoeling dat we leren om data op te schonen en om functioneel code te schrijven. 
 
-### Het concept 
+## Het concept 
 Voor deze opdracht wil ik de objecten in de collectie letterlijk in kaart brengen. Via locaties wil ik die tonen op een wereldkaart en zo kan je zien waar juist veel of weinig objecten vandaan komen. Ik wil dat elk object een los punt heeft op de kaart zodat de drukte erg gaat opvallen. 
 
 Mijn doelgroep voor dit concept zijn mensen die naar het museum komen en een goede/betere indruk willen krijgen van de hele collectie van het Tropen museum. Toen ik in het Tropen museum rond liep had ik ook echt niet het idee dat zij eigenlijk ontzettend veel objecten bezitten. Daar sta je ook niet snel bij stil en met deze wereldkaart wil ik dat wel bereiken. 
@@ -13,7 +13,7 @@ Ik heb mij heel erg laten inspireren door ruimte foto's van de aarde. Ik wilde v
 
 > foto van het resultaat
 
-### Installatie
+## Installatie
 
 #### Vizhub
 Voor deze opdracht heb ik in vizhub gewerkt (zie de link: https://vizhub.com/ManoukK/10ad4e38a33a4a00ba3c9e610c0727be) Vizhub werkt met een bundle.js die al jouw code omzet naar gescripte code. De bundle.js heb je nodig om gebruik te maken van mijn data visualisatie. Ik raad aan om mijn data visualisatie in vizhub te forken en daarmee verder te werken want lokaal werken met deze code werkt niet omdat de bundle.js zich niet update. 
@@ -33,3 +33,5 @@ Voor de wereldkaart maak ik ook gebruik van topojson en de geo projection die in
     <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 ```
+
+## De database
