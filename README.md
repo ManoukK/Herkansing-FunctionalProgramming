@@ -81,3 +81,8 @@ Door dit stukje code te schrijven als je de data inlaad zorg je ervoor dat je de
 Nu ziet de array met de items er zo uit. Je ziet dat de values, die eerst "verstopt" zaten, nu gelijk achter de keys staan van het item. 
 
 ![Schermafbeelding 2020-01-27 om 10 55 28](https://user-images.githubusercontent.com/45541885/73269587-65387c80-41dd-11ea-98ba-88768d273ccc.png)
+
+## Features 
+- [x] Elk land heeft zijn eigen kleur zodat je onderscheid kan maken tussen de landen
+- [x] Een tooltip die bij elk object aangeeft uit welk land dat komt
+- [] Het zou nog heel cool zijn als je de wereldbol kan draaien of dat het langzaam zelf draait 
