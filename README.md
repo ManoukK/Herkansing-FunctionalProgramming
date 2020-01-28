@@ -35,3 +35,49 @@ Voor de wereldkaart maak ik ook gebruik van topojson en de geo projection die in
 ```
 
 ## De database
+De database van het Tropen museum is ontzettend groot. Het bevat alle objecten en foto's die zij in hun collectie hebben zitten. Elk object heeft waardes eraan hangen zoals een foto, land, titel ect. Met deze gegevens is het mogelijk om allerlei soorten data visualisaties te maken. Via sparql is het mogelijk om specifieke objecten uit de database te filteren zodat je bijvoorbeeld alleen objecten toont uit een bepaalt land of zelfs categorie. 
+
+#### Wat heb ik ermee gedaan?
+Uit de database had ik eigenlijk alle objecten nodig die een land en een locatie (lat en long waardes) hadden. Ik wilde zoveel mogelijk objecten op de kaart laten zien waardoor ik niet veel wilde filteren. Ik had eerst in gedachte om ook foto's te tonen maar als ik dat zou doen betekende het dat er nog minder objecten op de kaart te zien waren dus heb ik het hierbij gelaten. De continenten had ik als waarde niet nodig omdat mijn D3 code kijkt naar de landen en de lat en long waardes. 
+
+### De query die ik heb gebruikt
+Via sparql heb ik een query gebruikt die de lat en long ophaald en de land namen van alle objecten. Voor de query en heb je een aantal standaard prefixes nodig om errors te voorkomen. Als je wilt kan je er een limit op geven van het aantal objecten wat opgehaald worden uit de database maar ik heb er voor gekozen om dit niet te doen. 
+```js
+`PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+	PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+	PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+	PREFIX gn: <http://www.geonames.org/ontology#>
+	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+	SELECT ?lat ?long ?landLabel WHERE {
+ 		?svcn skos:exactMatch/wgs84:lat ?lat .
+ 		?svcn skos:exactMatch/wgs84:long ?long .
+ 		?svcn skos:exactMatch/gn:parentCountry ?land .
+ 		?land gn:name ?landLabel .
+}`
+```
+
+Je hebt ook een endpoint nodig. Dit ik die ik heb gebruikt: 
+```js
+const endpoint = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-13/sparql'
+```
+
+Als je de data voor het eerst binnen krijgt is het nog moeilijk om bij de values te komen van de items. De array ziet er dan ook zo uit. Om dan bij de values te komen moet je langere code schrijven wat op den duur heel irritant kan worden. Je moet dan elke keer .value aangeven omdat je die nodig hebt en niet bijvoorbeeld de type. 
+
+![Schermafbeelding 2020-01-27 om 11 26 12](https://user-images.githubusercontent.com/45541885/73269013-48e81000-41dc-11ea-886b-457d11d16688.png)
+
+Door dit stukje code te schrijven als je de data inlaad zorg je ervoor dat je de data "opschoont" en dat je veel sneller bij de values kan dan als je dat niet doet. Door Number ervoor te schrijven zorg je er ook gelijk voor dat de values nummers worden in plaats van strings. 
+```js
+ .then(results => {
+    console.log(results)
+    		results.map(result => {
+    			result.lat = Number(result.lat.value)
+    			result.long = Number(result.long.value)
+    			result.countryName = result.landLabel.value
+    }) 
+```
+
+Nu ziet de array met de items er zo uit. Je ziet dat de values, die eerst "verstopt" zaten, nu gelijk achter de keys staan van het item. 
+
+![Schermafbeelding 2020-01-27 om 10 55 28](https://user-images.githubusercontent.com/45541885/73269587-65387c80-41dd-11ea-98ba-88768d273ccc.png)
