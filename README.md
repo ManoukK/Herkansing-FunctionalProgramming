@@ -99,11 +99,11 @@ Nu ziet de array met de items er zo uit. Je ziet dat de values, die eerst "verst
 - Data opschonen: https://github.com/ManoukK/functional-programming/wiki/Data-opschonen
 
 ## Bronnenlijst 
-- De basis wereldkaart code: 
-- De wereldkaart vorm:
-- Kleuren template:
-- De tooltip:
-- Code functioneel schrijven: 
+- De basis wereldkaart code: https://www.youtube.com/watch?v=Qw6uAg3EO64
+- De wereldkaart vorm: https://github.com/d3/d3-geo-projection
+- Kleuren template: https://observablehq.com/@d3/color-schemes
+- De tooltip: https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
+- Code functioneel schrijven: https://vizhub.com/Razpudding/6b3c5d10edba4c86babf4b6bc204c5f0?edit=files&file=index.js
 
 ## Credits 
 - Laurens had een soortgelijk concept gemaakt en daar heb ik qua functioneel schrijven veel aan gehad 
