@@ -11,7 +11,7 @@ Mijn doelgroep voor dit concept zijn mensen die naar het museum komen en een goe
 ### Het resultaat
 Ik heb mij heel erg laten inspireren door ruimte foto's van de aarde. Ik wilde voor deze opdracht dan ook de indruk geven alsof je vanuit de ruimte naar de wereld kijkt en een overzicht ziet van alle objecten en waar ze vandaan komen. 
 
-> foto van het resultaat
+![Schermafbeelding 2020-01-28 om 15 13 13](https://user-images.githubusercontent.com/45541885/73271380-c150d000-41e0-11ea-80a9-dbbf727380aa.png)
 
 ## Installatie
 
