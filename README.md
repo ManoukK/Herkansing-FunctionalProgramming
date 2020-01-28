@@ -97,3 +97,15 @@ Nu ziet de array met de items er zo uit. Je ziet dat de values, die eerst "verst
 #### Documentatie wat de vorige keer al goed was en wat ik dus niet hoefde te herkansen 
 - Fucntional programming: https://github.com/ManoukK/functional-programming/wiki/Functional-programming
 - Data opschonen: https://github.com/ManoukK/functional-programming/wiki/Data-opschonen
+
+## Bronnenlijst 
+- De basis wereldkaart code: 
+- De wereldkaart vorm:
+- Kleuren template:
+- De tooltip:
+- Code functioneel schrijven: 
+
+## Credits 
+- Laurens had een soortgelijk concept gemaakt en daar heb ik qua functioneel schrijven veel aan gehad 
+- Curran die heel duidelijk in een filmpje liet zien hoe je een basis wereldkaart moet maken in d3.js
+- Ik heb ook veel gehad aan oude projecten en codes die ik heb geschreven in d3.js 
