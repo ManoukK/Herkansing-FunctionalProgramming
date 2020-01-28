@@ -85,4 +85,4 @@ Nu ziet de array met de items er zo uit. Je ziet dat de values, die eerst "verst
 ## Features 
 - [x] Elk land heeft zijn eigen kleur zodat je onderscheid kan maken tussen de landen
 - [x] Een tooltip die bij elk object aangeeft uit welk land dat komt
-- [] Het zou nog heel cool zijn als je de wereldbol kan draaien of dat het langzaam zelf draait 
+- [ ] Het zou nog heel cool zijn als je de wereldbol kan draaien of dat het langzaam zelf draait 
