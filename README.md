@@ -87,3 +87,13 @@ Nu ziet de array met de items er zo uit. Je ziet dat de values, die eerst "verst
 - [x] Een tooltip die bij elk object aangeeft uit welk land dat komt
 - [ ] Het zou nog heel cool zijn als je de wereldbol kan draaien of dat het langzaam zelf draait 
 - [ ] Het zou ook nog heel gaaf zijn als je een foto ziet van het object (maar hoe veel objecten hou je op de kaart dan over?)
+
+## Documentatie (wiki linkjes) 
+- Wat ik moet herkansen: https://github.com/ManoukK/Herkansing-FunctionalProgramming/wiki/Wat-moet-ik-herkansen%3F
+- Mijn proces: https://github.com/ManoukK/Herkansing-FunctionalProgramming/wiki/Mijn-proces
+- De code in detail: https://github.com/ManoukK/Herkansing-FunctionalProgramming/wiki/De-code-in-detail
+- Reflectie: https://github.com/ManoukK/Herkansing-FunctionalProgramming/wiki/Reflectie
+
+#### Documentatie wat de vorige keer al goed was en wat ik dus niet hoefde te herkansen 
+- Fucntional programming: https://github.com/ManoukK/functional-programming/wiki/Functional-programming
+- Data opschonen: https://github.com/ManoukK/functional-programming/wiki/Data-opschonen
