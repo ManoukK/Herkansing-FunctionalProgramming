@@ -41,3 +41,14 @@ circle {
 svg {
 	margin-top: 5em;
 }
+
+h1 {
+	color: #707070;
+	text-align: left; 
+  margin-left: 1.5em;
+  margin-top: 1.5em;
+  width: 7em;
+  position: absolute;
+  opacity: 0.5;
+  font-family: serif;
+}

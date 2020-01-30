@@ -4,7 +4,9 @@
 import { select, 
         json, 
         geoPath, 
-        geoGilbert
+        geoGilbert,
+        scaleOrdinal,
+        schemeRdPu
        } from 'd3';
 
 //feature zet topojson om naar geojson
@@ -22,42 +24,39 @@ const query = `PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
  		?svcn skos:exactMatch/wgs84:long ?long .
  		?svcn skos:exactMatch/gn:parentCountry ?land .
  		?land gn:name ?landLabel .
-}`
+}`;
 
-const endpoint = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-13/sparql'
+const endpoint = 'https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-13/sparql';
 
-const svg = select('svg')
-const circleSize = 2
+const svg = select('svg');
+const circleSize = 2;
+
 //soort kaart gevonden op: https://github.com/d3/d3-geo-projection
-const projection = geoGilbert()
+const projection = geoGilbert();
 //hier stop je de projection in van hierboven zodat het weer welke vorm het moet krijgen
-const pathGenerator = geoPath().projection(projection)
+const pathGenerator = geoPath().projection(projection);
 
 //bron tooltip: https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
-const tooltip = d3.select('body').append('div').attr('class', 'toolTip');
+const tooltip = select('body').append('div').attr('class', 'toolTip');
 const color = colorPalette();
-
-const width = +svg.attr('width');
-const heigth = +svg.attr('heigth');
 
 //code van Laurens uit zijn vizhub wereldkaart: //https://vizhub.com/Razpudding/b42c2072180348658542212b91614b82
 //ook gebruikt voor mijn bar chart https://vizhub.com/ManoukK/c5757c39fd744066aa64668b02a92785?edit=files&file=index.js&mode=full
 function colorPalette() {
-		return d3.scaleOrdinal(d3.schemeRdPu[9])
-}
+		return scaleOrdinal(schemeRdPu[9])
+};
 
-
-setupWorldMap()
-makeWorldMap()
-makeCircles()
+setupWorldMap();
+makeWorldMap();
+makeCircles();
 
 //dit zorgt ervoor dat het de curves krijgt die je wilt ipv recht in het hele scherm
 function setupWorldMap(){
   svg
     .append('path')
     .attr('class', 'sphere')
-    .attr('d', pathGenerator({ type: 'Sphere' }))
-}
+    .attr('d', pathGenerator({ type: 'Sphere' }));
+};
 
 function makeWorldMap() {
   //Met deze link worden de landen gemaakt (het is een npm package)
@@ -68,6 +67,7 @@ function makeWorldMap() {
     //die "verstopt" zitten in data.objects.countries 
     //hier roep je de feature aan met twee parameters
     const countries = feature(data, data.objects.countries);
+    console.log(countries);
     //nu word voor elk land in de array een pad/vorm aangemaakt 
     svg
       .selectAll('path')
@@ -75,9 +75,9 @@ function makeWorldMap() {
       .enter()
       .append('path')
       .attr('class', 'country')
-      .attr('d', pathGenerator)
-  })
-}
+      .attr('d', pathGenerator);
+  });
+};
 
 function makeCircles() {  
   fetch(endpoint +"?query="+ encodeURIComponent(query) + "&format=json")
@@ -89,7 +89,7 @@ function makeCircles() {
     			result.lat = Number(result.lat.value)
     			result.long = Number(result.long.value)
     			result.countryName = result.landLabel.value
-    }) 
+    }); 
     
 	svg
 		.selectAll('circle')
@@ -104,7 +104,6 @@ function makeCircles() {
 			return projection([d.long, d.lat])[1]
 		})
 		.attr('r', circleSize+'px')
-		// .style('fill', 'orange')
 		.style('fill', d => color(d.countryName))
 		.on('mouseover', function(d){
 			tooltip
@@ -118,6 +117,8 @@ function makeCircles() {
 			//tekst in het blokje
 			.html('Country:' + '<br/>' + (d.countryName))
 	})
-		.on('mouseout', function(d){ tooltip.style('display', 'none');});
-	})
-}
+		.on('mouseout', function(d){ 
+    		tooltip
+        .style('display', 'none');});
+	});
+};
