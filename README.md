@@ -1,1 +1,0 @@
-See github: https://github.com/ManoukK/Herkansing-FunctionalProgramming 
