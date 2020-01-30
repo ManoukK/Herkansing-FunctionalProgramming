@@ -1,5 +1,7 @@
 # De collectie in kaart brengen
 
+> Zie mijn project in vizhub: https://vizhub.com/ManoukK/10ad4e38a33a4a00ba3c9e610c0727be
+
 ## De opdracht
 De opdracht is om een data visualisatie te maken van de database van het Tropen museum. De data visualisatie is statisch en de database word opgehaald met een query. Zo blijft de visualisatie altijd up to date. Het is ook de bedoeling dat we leren om data op te schonen en om functioneel code te schrijven. 
 
